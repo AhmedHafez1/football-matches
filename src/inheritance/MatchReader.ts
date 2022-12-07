@@ -1,31 +1,6 @@
 import { CsvFileReader } from './CsvFileReader';
-import { parseDate } from './utils';
-
-export type MatchData = [
-  Date,
-  string,
-  string,
-  number,
-  number,
-  MatchResult,
-  string
-];
-
-export enum MatchDetails {
-  MatchDate,
-  HomeTeam,
-  AwayTeam,
-  HomeTeamScore,
-  AwayTeamScore,
-  Winner,
-  Refree,
-}
-
-export enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D',
-}
+import { parseDate } from '../utils';
+import { MatchData, MatchDetails, MatchResult } from '../MatchModels';
 
 export class MatchReader extends CsvFileReader<MatchData> {
   mapRow(row: string[]): MatchData {
