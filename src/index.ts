@@ -1,7 +1,6 @@
-import { CsvFileReader, MatchDetails } from './CsvFileReader';
-import { MatchResult } from './MatchResult';
+import { MatchDetails, MatchReader, MatchResult } from './MatchReader';
 
-const reader = new CsvFileReader('football.csv');
+const reader = new MatchReader('football.csv');
 const matches = reader.readFile();
 
 let liverboolWins = 0;
