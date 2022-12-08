@@ -6,12 +6,11 @@ import { HtmlReport } from './ReportTargets/HtmlReport';
 
 import { Summary } from './Summary';
 
-const csvFileReader = new CsvFileReader('football.csv');
-const reader = new MatchReader(csvFileReader);
+const reader = MatchReader.fromCsv('football.csv');
 const matches = reader.loadData();
 
-const summary = new Summary(new WinsAnalyzer('Arsenal'), new ConsoleReport());
+const summary = Summary.winMatchesHtml('Man City');
 summary.buildAndPrint(matches);
 
-const htmlSummary = new Summary(new WinsAnalyzer('Chelsea'), new HtmlReport());
+const htmlSummary = Summary.winMatchesConsole('Chelsea');
 htmlSummary.buildAndPrint(matches);

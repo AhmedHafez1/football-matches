@@ -9,6 +9,10 @@ export interface DataReader {
 export class MatchReader {
   constructor(public dataReader: DataReader) {}
 
+  static fromCsv(fileName: string): MatchReader {
+    return new MatchReader(new CsvFileReader(fileName));
+  }
+
   loadData(): MatchData[] {
     return this.dataReader.read().map(this.mapRow);
   }
