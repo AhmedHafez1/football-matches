@@ -12,6 +12,6 @@ export class HtmlReport implements OutputTarget {
     </div>
     `;
 
-    fs.writeFileSync(`win-report.html`, html);
+    fs.writeFileSync(`reports/win-report.html`, html);
   }
 }
